@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="description" content="Professional Event Analytics Dashboard for Hosts - Real-time cursor tracking and attendee interaction analytics" />
+    <meta name="keywords" content="event analytics, dashboard, real-time tracking, cursor analytics, event management" />
+    <meta name="author" content="Event Analytics Team" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://event-analytics-dashboard.com/" />
+    <meta property="og:title" content="Event Analytics Dashboard" />
+    <meta property="og:description" content="Professional Event Analytics Dashboard for Hosts - Real-time cursor tracking and attendee interaction analytics" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://event-analytics-dashboard.com/" />
+    <meta property="twitter:title" content="Event Analytics Dashboard" />
+    <meta property="twitter:description" content="Professional Event Analytics Dashboard for Hosts - Real-time cursor tracking and attendee interaction analytics" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/twitter-image.png" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <title>Event Analytics Dashboard</title>
+    
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
+    <style>
+      /* Critical CSS for initial load */
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #f9fafb;
+      }
+      
+      .dark body {
+        background-color: #111827;
+        color: #f9fafb;
+      }
+      
+      /* Loading animation for initial page load */
+      .initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+      
+      .loader-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid #ffffff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loader-text {
+        color: white;
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>You need to enable JavaScript to run this application.</p>
+        <p>This Event Analytics Dashboard requires JavaScript for real-time features and interactive analytics.</p>
+      </div>
+    </noscript>
+    
+    <!-- Initial loading screen -->
+    <div id="initial-loader" class="initial-loader">
+      <div style="text-align: center;">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading Event Analytics Dashboard...</div>
+      </div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <!-- Remove initial loader when React app loads -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loader = document.getElementById('initial-loader');
+          if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(function() {
+              loader.remove();
+            }, 300);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

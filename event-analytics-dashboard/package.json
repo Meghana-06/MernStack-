@@ -1,0 +1,59 @@
+{
+  "name": "event-analytics-dashboard",
+  "version": "1.0.0",
+  "description": "Professional Event Analytics Dashboard for Hosts with real-time cursor tracking",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "start": "concurrently \"npm run backend:start\" \"npm run frontend:start\"",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "backend:install": "cd backend && npm install",
+    "frontend:dev": "cd frontend && npm start",
+    "frontend:start": "cd frontend && npm start",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:install": "cd frontend && npm install",
+    "install:all": "npm run backend:install && npm run frontend:install",
+    "build": "npm run frontend:build",
+    "test": "concurrently \"npm run backend:test\" \"npm run frontend:test\"",
+    "backend:test": "cd backend && npm test",
+    "frontend:test": "cd frontend && npm test",
+    "lint": "concurrently \"npm run backend:lint\" \"npm run frontend:lint\"",
+    "backend:lint": "cd backend && npm run lint",
+    "frontend:lint": "cd frontend && npm run lint",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "setup": "npm run install:all && cp .env.example backend/.env && echo 'Setup complete! Update backend/.env with your configuration, then run: npm run dev'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/event-analytics-dashboard.git"
+  },
+  "keywords": [
+    "event-analytics",
+    "dashboard",
+    "mern-stack",
+    "real-time",
+    "cursor-tracking",
+    "socket.io",
+    "mongodb",
+    "express",
+    "react",
+    "nodejs"
+  ],
+  "author": "Event Analytics Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/event-analytics-dashboard/issues"
+  },
+  "homepage": "https://github.com/yourusername/event-analytics-dashboard#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
